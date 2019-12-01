@@ -27,7 +27,6 @@ class CreateUserRegistration extends Migration
             $table->string('locality');
             $table->string('pincode');
             $table->string('UID');
-            $table->primary('UID');	
 
             $table->timestamps();
         });
