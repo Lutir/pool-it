@@ -84,7 +84,7 @@
         </p>
       </div>
       <div>
-        <h2>Get an email with the pass</h2>
+        <h2>Collect the pass from our volunteer</h2>
         <p>
         </p>
       </div>
@@ -187,7 +187,7 @@
               <div class="col-md-6">
                 <div class="block-counter-1 block-counter-1-sm">
                   <span class="number"><span data-number="5">0</span></span>
-                  <span class="caption text-black">Schools</span>
+                  <span class="caption text-black">Colleges</span>
                 </div>
               </div>
               <div class="col-md-6">
