@@ -29,6 +29,20 @@
         color: white;
         padding: 10px 35px;
       }
+      .form-check-label{
+        padding:0 10px;
+        margin: 0 10px;
+      }
+      .mode{
+        margin: 5px 0px;
+      }
+      .payment-class{
+        margin: 0px 15px;
+        padding-bottom: 30px;
+      }
+      .form-class{
+        padding:20px;
+      }
     </style>
   </head>
   
@@ -47,19 +61,12 @@
               <hr>
           </div>
           <div class="col-md-6 offset-md-3">
-            <h5>How it works?</h5>
-            <ul>
-              <li>Step by step application goes here,</li>
-              <li>Step by step application goes here,</li>
-              <li>Step by step application goes here,</li>
-              <li>Step by step application goes here,</li>
-              <li>Step by step application goes here,</li>
-            </ul>
+            
           </div> 
         </div>
         {{ Form::open(array('url' => 'authenticate')) }}
         {{ Form::token() }}
-        <div class="row">
+        <div class="row form-class">
           <div class="col-md-8 offset-md-2">
             <div class="row">
                 <div class="col-md-6">
@@ -71,7 +78,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <small id="helpId" class="text-muted">SAP Number</small>
-                        <input type="text" name="sap" id="" class="form-control" placeholder="Enter SAP Number" aria-describedby="helpId">
+                        <input type="text" name="sapNumber" id="" class="form-control" placeholder="Enter SAP Number" aria-describedby="helpId">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -95,13 +102,31 @@
               <div class="col-md-4">
                   <div class="form-group">
                       <small id="helpId" class="text-muted">Class and Division</small>
-                      <input type="text" name="class" id="" class="form-control" placeholder="Enter class and division" aria-describedby="helpId">
+                      <input type="text" name="classDivision" id="" class="form-control" placeholder="Enter class and division" aria-describedby="helpId">
                   </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                     <small id="helpId" class="text-muted">Referred by</small>
-                    <input type="text" name="referId" id="" class="form-control" placeholder="Enter volunteer id" aria-describedby="helpId">
+                    <input type="text" name="referralId" id="" class="form-control" placeholder="Enter volunteer id" aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <small id="helpId" class="text-muted">College Course</small>
+                    <input type="text" name="course" id="" class="form-control" placeholder="Enter college course" aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <small id="helpId" class="text-muted">In-Time</small>
+                    <input type="time" name="inTime" id="" class="form-control" min="06:00" max="20:00" aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <small id="helpId" class="text-muted">Out-Time</small>
+                    <input type="time" name="outTime" id="" class="form-control" min="06:00" max="20:00" aria-describedby="helpId">
                 </div>
             </div>
                 <!-- <div class="col-md-12">
@@ -113,24 +138,24 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <small id="helpId" class="text-muted">Building Name/ House Number:</small>
-                        <input type="text" name="buildingName" id="" class="form-control" placeholder="Enter Building Name/ House Number" aria-describedby="helpId">
+                        <input type="text" name="building" id="" class="form-control" placeholder="Enter Building Name/ House Number" aria-describedby="helpId">
                     </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                      <small id="helpId" class="text-muted">Address Line 1:</small>
-                      <input type="text" name="addressLane1" id="" class="form-control" placeholder="Enter Address Line 1" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">Address Line 1 (Street Name, Area of Residence)</small>
+                      <input type="text" name="address1" id="" class="form-control" placeholder="Enter Address Line 1" aria-describedby="helpId">
                   </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                    <small id="helpId" class="text-muted">Address Line 2:</small>
-                    <input type="text" name="addressLane2" id="" class="form-control" placeholder="Enter Address Line 2" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Address Line 2</small>
+                    <input type="text" name="address2" id="" class="form-control" placeholder="Enter Address Line 2" aria-describedby="helpId">
                 </div>
             </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                      <small id="helpId" class="text-muted">Locality</small>
+                      <small id="helpId" class="text-muted">Locality (Eg: Andheri-W, Goregaon - E, etc)</small>
                       <input type="text" name="locality" id="" class="form-control" placeholder="Enter Locality" aria-describedby="helpId">
                   </div>
               </div>
@@ -140,7 +165,18 @@
                         <input type="text" name="pincode" id="" class="form-control" placeholder="Enter pincode" aria-describedby="helpId">
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="payment-class">
+                  <p class="text-muted mode">Mode of Payment</p>
+                  <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input class="form-check-input" name="payment" checked="true" type="radio" name="" id="" value="card"> Pay by Card
+                  </label>
+                  <label class="form-check-label">
+                    <input class="form-check-input" name="payment" type="radio" name="" id="" value="cash"> Pay by Cash
+                  </label>
+                </div>
+                </div>
+                <div class="col-md-12 text-center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>

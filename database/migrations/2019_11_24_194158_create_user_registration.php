@@ -21,13 +21,16 @@ class CreateUserRegistration extends Migration
             $table->string('mobile');
             $table->string('year');
             $table->string('classDivision');
+            $table->string('referralId')->nullable($value = true);
+            $table->string('course');
+            $table->time('inTime');
+            $table->time('outTime');
             $table->string('building');
             $table->longText('address1');
             $table->longText('address2');
             $table->string('locality');
             $table->string('pincode');
-            $table->string('UID');
-
+            $table->boolean('payment')->nullable($value = true);
             $table->timestamps();
         });
     }

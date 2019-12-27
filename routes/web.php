@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('home/registration');
 });
+
+Route::post('authenticate', 'RegistrationController@register');
